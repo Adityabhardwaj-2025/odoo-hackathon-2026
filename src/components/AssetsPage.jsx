@@ -3,12 +3,19 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import AssetCard from "./AssetCard";
 import AddAssetModal from "./AddAssetModal";
+import AllocateAssetModal from "./AllocateAssetModal";
 import styles from "./DashboardPage.module.css";
+import TransferAssetModal from "./TransferAssetModal";
+import AssetDetailsModal from "./AssetDetailsModal";
 
 export default function AssetsPage({
   onNavigate = () => {},
 }) {
   const [showModal, setShowModal] = useState(false);
+  const [allocateModal, setAllocateModal] = useState(false);
+  const [showTransferModal, setShowTransferModal] = useState(false);
+  const [selectedAsset, setSelectedAsset] = useState(null);
+const [showDetailsModal, setShowDetailsModal] = useState(false);
 
   const [assets, setAssets] = useState([
     {
@@ -33,6 +40,13 @@ export default function AssetsPage({
     },
   ]);
 
+  const employees = [
+    { id: 1, name: "Tamanna  Sharma" },
+    { id: 2, name: "Varun Yadav" },
+    { id: 3, name: "Tarun Kumar" },
+    { id: 4, name: "Karan Verma" },
+  ];
+
   const addAsset = (asset) => {
     setAssets((prev) => [
       ...prev,
@@ -45,6 +59,39 @@ export default function AssetsPage({
 
     setShowModal(false);
   };
+  const transferAsset = (employee) => {
+  setAssets((prev) =>
+    prev.map((asset) =>
+      asset.tag === selectedAsset.tag
+        ? {
+            ...asset,
+            holder: employee,
+            status: "Allocated",
+          }
+        : asset
+    )
+  );
+
+  setShowTransferModal(false);
+  setSelectedAsset(null);
+};
+
+  const allocateAsset = (employeeName) => {
+    setAssets((prev) =>
+      prev.map((asset) =>
+        asset.tag === selectedAsset.tag
+          ? {
+              ...asset,
+              status: "Allocated",
+              holder: employeeName,
+            }
+          : asset
+      )
+    );
+
+    setAllocateModal(false);
+    setSelectedAsset(null);
+  };
 
   return (
     <div className={styles.shell}>
@@ -54,9 +101,7 @@ export default function AssetsPage({
       />
 
       <div className={styles.main}>
-        <Navbar
-          title="Assets"
-        />
+        <Navbar title="Assets" />
 
         <div className={styles.content}>
           <button
@@ -69,11 +114,25 @@ export default function AssetsPage({
 
           <div className={styles.kpiGrid}>
             {assets.map((asset) => (
-              <AssetCard
-                key={asset.tag}
-                asset={asset}
-              />
-            ))}
+             <AssetCard
+    key={asset.tag}
+    asset={asset}
+    onView={(asset) => {
+        setSelectedAsset(asset);
+        setShowDetailsModal(true);
+    }}
+    onAllocate={(asset) => {
+        setSelectedAsset(asset);
+        setAllocateModal(true);
+    }}
+    onTransfer={(asset) => {
+        setSelectedAsset(asset);
+        setShowTransferModal(true);
+    }}
+/>
+
+            ))
+              }
           </div>
         </div>
       </div>
@@ -83,6 +142,38 @@ export default function AssetsPage({
         onClose={() => setShowModal(false)}
         onSubmit={addAsset}
       />
+      <TransferAssetModal
+  isOpen={showTransferModal}
+  asset={selectedAsset}
+  employees={[
+    "Aditya Bhardwaj",
+    "Tamanna Sharma",
+    "Varun Yadav",
+    "Tarun Kumar",
+  ]}
+  onClose={() => {
+    setShowTransferModal(false);
+    setSelectedAsset(null);
+  }}
+  onTransfer={transferAsset}
+/>
+
+      <AllocateAssetModal
+        isOpen={allocateModal}
+        asset={selectedAsset}
+        employees={employees}
+        onClose={() => setAllocateModal(false)}
+        onAllocate={allocateAsset}
+      />
+      <AssetDetailsModal
+    isOpen={showDetailsModal}
+    asset={selectedAsset}
+    onClose={() => {
+        setShowDetailsModal(false);
+        setSelectedAsset(null);
+    }}
+/>
     </div>
+    
   );
 }

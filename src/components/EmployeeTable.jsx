@@ -5,9 +5,9 @@ import styles from './EmployeeTable.module.css';
 const ROLES = ['Employee', 'Department Head', 'Asset Manager', 'Admin'];
 
 const SAMPLE = [
-  { id: 1, name: 'Priya Sharma', email: 'priya.sharma@company.com', department: 'IT', role: 'Asset Manager', status: 'Active' },
-  { id: 2, name: 'Raj Mehta', email: 'raj.mehta@company.com', department: 'Facilities', role: 'Employee', status: 'Active' },
-  { id: 3, name: 'Anita Desai', email: 'anita.desai@company.com', department: 'HR', role: 'Department Head', status: 'Active' },
+  { id: 1, name: 'Tamanna Sharma', email: 'tamanna.sharma@company.com', department: 'IT', role: 'Asset Manager', status: 'Active' },
+  { id: 2, name: 'Varun Yadav', email: 'Varun.yadav@company.com', department: 'Facilities', role: 'Employee', status: 'Active' },
+  { id: 3, name: 'Tarun Kumar', email: 'Tarun.kumar@company.com', department: 'HR', role: 'Department Head', status: 'Active' },
   { id: 4, name: 'Karan Verma', email: 'karan.verma@company.com', department: 'Finance', role: 'Employee', status: 'Inactive' },
 ];
 

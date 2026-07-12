@@ -14,9 +14,9 @@ const DEFAULT_KPIS = [
 ];
 
 const DEFAULT_OVERDUE = [
-  { id: 1, assetName: 'Dell Latitude 5420', assetTag: 'AF-0114', type: 'Return', dueDate: '2026-07-08', owner: 'Priya Sharma' },
-  { id: 2, assetName: 'Conference Room B2', assetTag: 'AF-0230', type: 'Booking', dueDate: '2026-07-10', owner: 'Raj Mehta' },
-  { id: 3, assetName: 'Projector – EPX210', assetTag: 'AF-0071', type: 'Maintenance', dueDate: '2026-07-09', owner: 'Anita Desai' },
+  { id: 1, assetName: 'Dell Latitude 5420', assetTag: 'AF-0114', type: 'Return', dueDate: '2026-07-08', owner: 'Aditya Bhardwaj' },
+  { id: 2, assetName: 'Conference Room B2', assetTag: 'AF-0230', type: 'Booking', dueDate: '2026-07-10', owner: 'Tamanna Sharma' },
+  { id: 3, assetName: 'Projector – EPX210', assetTag: 'AF-0071', type: 'Maintenance', dueDate: '2026-07-09', owner: 'Tarun Kumar' },
 ];
 
 export default function DashboardPage({

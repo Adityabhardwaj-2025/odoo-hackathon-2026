@@ -9,13 +9,13 @@ export default function AssetCard({
     category: 'Electronics',
     status: 'Allocated',
     location: 'Bengaluru HQ · 3rd Floor',
-    holder: 'Priya Sharma',
+    holder: 'Aditya Bhardwaj',
     imageUrl: '',
     bookable: false,
   },
   onView = () => {},
   onAllocate = () => {},
-  onRequestTransfer = () => {},
+  onTransfer = () => {},
 }) {
   const isAllocated = (asset.status || '').toLowerCase() === 'allocated';
 
@@ -51,7 +51,7 @@ export default function AssetCard({
             <button
               type="button"
               className={styles.primaryBtn}
-              onClick={() => onRequestTransfer(asset)}
+              onClick={() => onTransfer(asset)}
             >
               Request transfer
             </button>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 
 export default function Navbar({
-  user = { name: 'Priya Sharma', role: 'Asset Manager' },
+  user = { name: 'Aditya Bhardwaj ', role: 'Asset Manager' },
   notificationCount = 0,
   onSearch = () => {},
   onLogout = () => {},
