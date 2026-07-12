@@ -16,7 +16,7 @@ export default function AssetsPage({
   const [showTransferModal, setShowTransferModal] = useState(false);
   const [selectedAsset, setSelectedAsset] = useState(null);
 const [showDetailsModal, setShowDetailsModal] = useState(false);
-
+    const [searchQuery, setSearchQuery] = useState("");
   const [assets, setAssets] = useState([
     {
       tag: "AF-0001",
@@ -92,6 +92,11 @@ const [showDetailsModal, setShowDetailsModal] = useState(false);
     setAllocateModal(false);
     setSelectedAsset(null);
   };
+  const filteredAssets = assets.filter((asset) =>
+  `${asset.name} ${asset.tag} ${asset.category} ${asset.holder || ""}`
+    .toLowerCase()
+    .includes(searchQuery.toLowerCase())
+);
 
   return (
     <div className={styles.shell}>
@@ -101,7 +106,10 @@ const [showDetailsModal, setShowDetailsModal] = useState(false);
       />
 
       <div className={styles.main}>
-        <Navbar title="Assets" />
+        <Navbar
+  title="Assets"
+  onSearch={(query) => setSearchQuery(query)}
+/>
 
         <div className={styles.content}>
           <button
@@ -113,7 +121,7 @@ const [showDetailsModal, setShowDetailsModal] = useState(false);
           </button>
 
           <div className={styles.kpiGrid}>
-            {assets.map((asset) => (
+            {filteredAssets.map((asset) => (
              <AssetCard
     key={asset.tag}
     asset={asset}
