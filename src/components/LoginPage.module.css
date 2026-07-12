@@ -1,0 +1,239 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 20% 20%, #2b3a67 0%, #1a2340 55%, #141b30 100%);
+  padding: 24px;
+  font-family: var(--af-font-body);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 940px;
+  background: var(--af-surface);
+  border-radius: var(--af-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--af-shadow-lg);
+}
+
+.brandSide {
+  background: linear-gradient(160deg, var(--af-navy-800) 0%, var(--af-navy-700) 100%);
+  color: #fff;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.brandMark {
+  margin-bottom: 24px;
+}
+
+.brandTag {
+  display: inline-block;
+  font-family: var(--af-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: var(--af-radius-sm);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.brandTitle {
+  font-family: var(--af-font-display);
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.brandSubtitle {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 28px;
+  max-width: 320px;
+}
+
+.brandList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brandList li {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.9);
+  padding-left: 20px;
+  position: relative;
+}
+
+.brandList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--af-accent);
+}
+
+.formSide {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--af-bg);
+  padding: 4px;
+  border-radius: var(--af-radius-md);
+  margin-bottom: 24px;
+}
+
+.tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 9px 0;
+  border-radius: var(--af-radius-sm);
+  font-family: var(--af-font-body);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--af-text-600);
+  cursor: pointer;
+}
+
+.tabActive {
+  background: var(--af-surface);
+  color: var(--af-navy-700);
+  box-shadow: var(--af-shadow-sm);
+}
+
+.formTitle {
+  font-family: var(--af-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--af-text-900);
+}
+
+.formHint {
+  font-size: 13px;
+  color: var(--af-text-600);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.error {
+  background: var(--af-danger-bg);
+  color: var(--af-danger);
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: var(--af-radius-sm);
+  margin-bottom: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--af-text-900);
+}
+
+.field input {
+  font-family: var(--af-font-body);
+  font-size: 14px;
+  padding: 11px 12px;
+  border-radius: var(--af-radius-sm);
+  border: 1px solid var(--af-border-strong);
+  outline: none;
+  color: var(--af-text-900);
+}
+
+.field input:focus {
+  border-color: var(--af-navy-600);
+  box-shadow: 0 0 0 3px rgba(76, 95, 138, 0.15);
+}
+
+.forgotLink {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--af-navy-600);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-top: -8px;
+}
+
+.submitBtn {
+  margin-top: 4px;
+  background: var(--af-navy-700);
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: var(--af-radius-sm);
+  font-family: var(--af-font-body);
+  font-weight: 600;
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--af-navy-800);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.switchLine {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--af-text-600);
+}
+
+.switchLink {
+  background: none;
+  border: none;
+  color: var(--af-navy-700);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+  .brandSide {
+    padding: 32px 28px;
+  }
+  .formSide {
+    padding: 32px 28px;
+  }
+}
