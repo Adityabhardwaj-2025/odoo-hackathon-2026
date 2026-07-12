@@ -1,0 +1,194 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--af-bg);
+  font-family: var(--af-font-body);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow-y: auto;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.kpiCard {
+  background: var(--af-surface);
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-radius-lg);
+  padding: 18px;
+  position: relative;
+}
+
+.kpiDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.available { background: var(--af-status-available-fg); }
+.allocated { background: var(--af-status-allocated-fg); }
+.reserved { background: var(--af-status-reserved-fg); }
+.maintenance { background: var(--af-status-maintenance-fg); }
+
+.kpiValue {
+  font-family: var(--af-font-display);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--af-text-900);
+}
+
+.kpiLabel {
+  font-size: 12.5px;
+  color: var(--af-text-600);
+  margin: 4px 0 0;
+}
+
+.quickActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actionBtn,
+.actionBtnSecondary {
+  padding: 11px 18px;
+  border-radius: var(--af-radius-md);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--af-font-body);
+}
+
+.actionBtn {
+  background: var(--af-navy-700);
+  color: #fff;
+  border: none;
+}
+
+.actionBtn:hover {
+  background: var(--af-navy-800);
+}
+
+.actionBtnSecondary {
+  background: var(--af-surface);
+  border: 1px solid var(--af-border-strong);
+  color: var(--af-text-900);
+}
+
+.actionBtnSecondary:hover {
+  background: var(--af-bg);
+}
+
+.overdueSection {
+  background: var(--af-surface);
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-radius-lg);
+  padding: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-family: var(--af-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--af-text-900);
+}
+
+.overdueCount {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--af-danger);
+  background: var(--af-danger-bg);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.overdueList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.overdueRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  border-top: 1px solid var(--af-border);
+}
+
+.overdueRow:first-child {
+  border-top: none;
+}
+
+.overdueInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overdueTag {
+  font-family: var(--af-font-mono);
+  font-size: 11px;
+  color: var(--af-text-600);
+  background: var(--af-bg);
+  border: 1px dashed var(--af-border-strong);
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+.overdueName {
+  font-size: 13.5px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--af-text-900);
+}
+
+.overdueMeta {
+  font-size: 12px;
+  color: var(--af-text-600);
+  margin: 2px 0 0;
+}
+
+.overdueRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overdueDate {
+  font-size: 12px;
+  color: var(--af-text-400);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 24px;
+  color: var(--af-text-400);
+  font-style: italic;
+}

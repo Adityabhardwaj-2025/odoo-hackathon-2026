@@ -1,0 +1,190 @@
+.navbar {
+  height: 64px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  background: var(--af-surface);
+  border-bottom: 1px solid var(--af-border);
+  font-family: var(--af-font-body);
+}
+
+.left {
+  flex: 0 0 auto;
+}
+
+.title {
+  font-family: var(--af-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--af-text-900);
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.searchForm {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--af-text-400);
+}
+
+.searchForm input {
+  width: 100%;
+  padding: 9px 12px 9px 36px;
+  border-radius: var(--af-radius-md);
+  border: 1px solid var(--af-border);
+  background: var(--af-bg);
+  font-size: 13.5px;
+  font-family: var(--af-font-body);
+  outline: none;
+  color: var(--af-text-900);
+}
+
+.searchForm input:focus {
+  border-color: var(--af-navy-600);
+  background: var(--af-surface);
+}
+
+.right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBtn {
+  position: relative;
+  background: var(--af-bg);
+  border: 1px solid var(--af-border);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--af-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--af-text-600);
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  color: var(--af-navy-700);
+  border-color: var(--af-border-strong);
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--af-danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+.profile {
+  position: relative;
+}
+
+.profileBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--af-radius-md);
+}
+
+.profileBtn:hover {
+  background: var(--af-bg);
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--af-navy-700);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--af-font-display);
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.3;
+}
+
+.profileName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--af-text-900);
+}
+
+.profileRole {
+  font-size: 11.5px;
+  color: var(--af-text-400);
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: var(--af-surface);
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-radius-md);
+  box-shadow: var(--af-shadow-md);
+  min-width: 160px;
+  padding: 6px;
+  z-index: 20;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 9px 10px;
+  font-size: 13px;
+  color: var(--af-text-900);
+  border-radius: var(--af-radius-sm);
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background: var(--af-bg);
+}
+
+@media (max-width: 720px) {
+  .center {
+    display: none;
+  }
+}
