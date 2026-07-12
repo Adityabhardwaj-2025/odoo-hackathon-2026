@@ -2,7 +2,7 @@ import { useState } from "react";
 import LoginPage from "./components/LoginPage";
 import DashboardPage from "./components/DashboardPage";
 import AssetsPage from "./components/AssetsPage";
-
+import EmployeesPage from "./components/EmployeePage";
 import {
   login,
   signup,
@@ -59,27 +59,26 @@ const [currentPage, setCurrentPage] = useState("/dashboard");
 
 if (isLoggedIn) {
   switch (currentPage) {
-    case "/dashboard":
-      return (
-        <DashboardPage
-          onNavigate={setCurrentPage}
-        />
-      );
+  case "/dashboard":
+    return (
+      <DashboardPage onNavigate={setCurrentPage} />
+    );
 
-    case "/assets":
-      return (
-        <AssetsPage
-          onNavigate={setCurrentPage}
-        />
-      );
+  case "/assets":
+    return (
+      <AssetsPage onNavigate={setCurrentPage} />
+    );
 
-    default:
-      return (
-        <DashboardPage
-          onNavigate={setCurrentPage}
-        />
-      );
-  }
+  case "/employees":
+    return (
+      <EmployeesPage onNavigate={setCurrentPage} />
+    );
+
+  default:
+    return (
+      <DashboardPage onNavigate={setCurrentPage} />
+    );
+}
 }
 
   return (
