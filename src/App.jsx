@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LoginPage from "./components/LoginPage";
 import DashboardPage from "./components/DashboardPage";
+import AssetsPage from "./components/AssetsPage";
 
 import {
   login,
@@ -12,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [currentPage, setCurrentPage] = useState("/dashboard");
 
   const handleLogin = async ({ email, password }) => {
     setLoading(true);
@@ -55,9 +57,30 @@ function App() {
     }
   };
 
-  if (isLoggedIn) {
-    return <DashboardPage />;
+if (isLoggedIn) {
+  switch (currentPage) {
+    case "/dashboard":
+      return (
+        <DashboardPage
+          onNavigate={setCurrentPage}
+        />
+      );
+
+    case "/assets":
+      return (
+        <AssetsPage
+          onNavigate={setCurrentPage}
+        />
+      );
+
+    default:
+      return (
+        <DashboardPage
+          onNavigate={setCurrentPage}
+        />
+      );
   }
+}
 
   return (
     <LoginPage
