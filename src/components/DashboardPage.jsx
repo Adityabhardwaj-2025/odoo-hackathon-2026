@@ -20,7 +20,7 @@ const DEFAULT_OVERDUE = [
 ];
 
 export default function DashboardPage({
-  user = { name: 'Priya Sharma', role: 'Asset Manager' },
+  user = { name: 'Aditya Bhardwaj', role: 'Asset Manager' },
   kpis = DEFAULT_KPIS,
   overdue = DEFAULT_OVERDUE,
   onQuickAction = () => {},
